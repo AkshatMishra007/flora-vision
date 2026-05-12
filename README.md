@@ -21,7 +21,7 @@ The website includes:
 ## 🚀 Live Demo
 
 🔗 Deployment Link:  
-`Will be added after deployment`
+https://flora-vision-kappa.vercel.app
 
 ---
 
