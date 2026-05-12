@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FloraVision — Earth's Exhale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#07110a] text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex items-center justify-between nav-blur"
+    >
+      <a
+        href="#"
+        class="flex items-center gap-2 font-display text-xl font-semibold tracking-tight"
+      >
+        <span class="brand-logo" aria-hidden="true">
+          <img src="assets/plant_1.png" alt="" />
+        </span>
+        <span class="sr-only">FloraVision.</span>
+        FloraVision.
+      </a>
+      <ul class="hidden md:flex items-center gap-10 text-sm text-white/80">
+        <li>
+          <a href="#hero" class="hover:text-white transition tracking-wide"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="#trendy" class="hover:text-white transition tracking-wide"
+            >Plants Type</a
+          >
+        </li>
+        <li>
+          <a
+            href="#top-selling"
+            class="hover:text-white transition tracking-wide"
+            >More</a
+          >
+        </li>
+        <li>
+          <a href="#footer" class="hover:text-white transition tracking-wide"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <div class="hidden md:flex items-center gap-4 text-white/60">
+        <button class="hover:text-white transition tracking-wide">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
+            />
+          </svg>
+        </button>
+        <button class="hover:text-white transition tracking-wide">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21h6"
+            />
+          </svg>
+        </button>
+        <button class="hover:text-white transition tracking-wide" id="menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <button
+        class="md:hidden text-white/70 hover:text-white"
+        id="mobile-menu-btn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile navigation -->
+    <div
+      id="mobile-nav"
+      class="fixed inset-0 z-40 bg-[#1a2518]/95 backdrop-blur-md hidden flex-col items-center justify-center gap-8 text-xl"
+    >
+      <button
+        id="mobile-close"
+        class="absolute top-6 right-6 text-white/60 hover:text-white"
+      >
+        ✕
+      </button>
+      <a href="#hero" class="mobile-link hover:text-[#a3c77a] transition"
+        >Home</a
+      >
+      <a href="#trendy" class="mobile-link hover:text-[#a3c77a] transition"
+        >Plants Type</a
+      >
+      <a href="#top-selling" class="mobile-link hover:text-[#a3c77a] transition"
+        >More</a
+      >
+      <a href="#footer" class="mobile-link hover:text-[#a3c77a] transition"
+        >Contact</a
+      >
+    </div>
+    <!-- Hero section wrapper -->
+    <section class="hero-wrapper relative">
+      <!-- background image -->
+      <div class="hero-bg-plant"></div>
+
+      <!-- Hero section -->
+      <section id="hero" class="relative min-h-[800px] flex items-center pt-20">
+        <!-- no hero-bg-plant div here anymore, it's on the wrapper -->
+
+        <div
+          class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 lg:px-16 flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20 pb-4 lg:pb-0"
+        >
+          <!-- Left content -->
+          <div class="w-full lg:flex-1 lg:pt-24">
+            <h1
+              class="font-display text-[42px] md:text-[60px] lg:text-[80px] font-semibold leading-[0.96] mb-6"
+            >
+              Earth's Exhale
+            </h1>
+            <p
+              class="text-white/68 text-sm md:text-base mb-8 max-w-[26rem] leading-[1.65]"
+            >
+              "Earth Exhale" represents the natural purity and vitality that
+              sustains all life on our planet.
+            </p>
+            <div class="flex items-center gap-4">
+              <a
+                href="#top-selling"
+                class="btn-primary px-7 py-2.5 rounded-full text-white text-sm font-medium transition"
+                >Buy Now</a
+              >
+              <button
+                class="flex items-center gap-2.5 text-sm text-white/60 hover:text-white transition"
+              >
+                <span
+                  class="w-7 h-7 rounded-full border border-white/25 flex items-center justify-center text-[10px]"
+                  >▶</span
+                >
+                <span class="tracking-wide">Live Demo</span>
+              </button>
+            </div>
+
+            <!-- Review card -->
+            <div
+              class="mt-11 lg:mt-14 glass-card-sm rounded-2xl px-5 py-5 flex items-start gap-4 max-w-[21rem]"
+            >
+              <div
+                class="mini-review-avatar rounded-full flex-shrink-0"
+                role="img"
+                aria-label="Ronnie Hamill"
+              >
+                <img src="assets/avatar1.png" alt="" />
+              </div>
+              <div>
+                <div class="text-xs font-semibold mb-0.5">Ronnie Hamill</div>
+                <div class="text-yellow-400 text-xs mb-1">★★★★★</div>
+                <p class="text-white/50 text-xs leading-snug">
+                  I'm absolutely thrilled with my new natural plants! They bring
+                  such a fresh and vibrant energy to my home.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero showcase card -->
+          <div
+            class="w-full flex justify-center lg:flex-1 lg:justify-end lg:pt-16 lg:pb-10"
+          >
+            <div
+              class="hero-card w-full max-w-[320px] md:max-w-[380px] lg:max-w-[410px] min-h-[440px] lg:min-h-[485px] relative rounded-[2rem] flex flex-col justify-end"
+            >
+              <!-- Floating plant image -->
+              <div class="relative flex justify-center">
+                <img
+                  src="assets/aglaonema.png"
+                  alt="Aglaonema"
+                  class="w-[290px] md:w-[350px] lg:w-[395px] max-w-none object-contain drop-shadow-2xl -mt-20 lg:-mt-24 translate-y-2 relative z-10"
+                />
+              </div>
+              <!-- Card body -->
+              <div class="px-7 lg:px-9 pt-12 pb-7 lg:pb-9">
+                <div
+                  class="text-[11px] tracking-widest uppercase text-white/40 mb-2"
+                >
+                  Indoor Plant
+                </div>
+                <div
+                  class="font-display text-xl lg:text-2xl font-semibold mb-1"
+                >
+                  Aglaonema plant
+                </div>
+                <!-- Slider dots + arrow -->
+                <div class="flex items-center gap-2 mb-5 mt-1">
+                  <span class="w-5 h-1.5 rounded-full bg-white/70"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/25"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/25"></span>
+                  <span class="ml-auto text-white/30 text-lg">›</span>
+                </div>
+                <button
+                  class="showcase-btn w-full py-2.5 rounded-full text-sm font-medium transition"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trendy plants section -->
+      <section
+        id="trendy"
+        class="relative z-10 mt-0 pt-8 lg:pt-10 pb-20 lg:pb-24 px-6 md:px-10 lg:px-16"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-11 lg:mb-13"
+          >
+            Our Trendy plants
+          </h2>
+
+          <!-- Card 1 -->
+          <div
+            class="trendy-card rounded-[2rem] px-7 lg:px-14 py-6 lg:py-8 min-h-[210px] lg:min-h-[230px] flex flex-row items-center gap-6 lg:gap-12 mb-8 overflow-visible"
+          >
+            <div
+              class="flex-shrink-0 w-48 h-48 md:w-60 md:h-60 lg:w-[19rem] lg:h-[19rem] -mt-8 lg:-mt-12 -ml-3 lg:-ml-8"
+            >
+              <img
+                src="assets/plantain.png"
+                alt="Plantain Lilies"
+                class="w-full h-full object-contain drop-shadow-2xl"
+              />
+            </div>
+            <div class="flex-1 py-8 lg:py-10">
+              <h3
+                class="font-display text-base md:text-lg lg:text-xl font-semibold mb-2"
+              >
+                For Your Desks Decorations
+              </h3>
+              <p
+                class="text-white/68 text-xs md:text-sm leading-[1.65] mb-4 max-w-[34rem]"
+              >
+                I recently added a beautiful desk plant to my workspace, and
+                it's made such a positive difference!
+              </p>
+              <div class="text-sm md:text-base font-semibold mb-3">
+                Rs. 599/-
+              </div>
+              <button
+                class="btn-primary px-6 py-2 rounded-full text-xs md:text-sm font-medium transition"
+              >
+                Explore
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="trendy-card rounded-[2rem] px-7 lg:px-14 py-6 lg:py-8 min-h-[210px] lg:min-h-[230px] flex flex-row-reverse items-center gap-6 lg:gap-12 overflow-visible"
+          >
+            <div
+              class="flex-shrink-0 w-48 h-48 md:w-60 md:h-60 lg:w-[19rem] lg:h-[19rem] -mt-8 lg:-mt-12 -mr-3 lg:-mr-8"
+            >
+              <img
+                src="assets/agave.png"
+                alt="Agave"
+                class="w-full h-full object-contain drop-shadow-2xl"
+              />
+            </div>
+            <div class="flex-1 py-8 lg:py-10">
+              <h3
+                class="font-display text-base md:text-lg lg:text-xl font-semibold mb-2"
+              >
+                For Your Desks Decorations
+              </h3>
+              <p
+                class="text-white/68 text-xs md:text-sm leading-[1.65] mb-4 max-w-[34rem]"
+              >
+                The greenery adds a touch of nature and calm to my desk, making
+                the whole space feel more inviting.
+              </p>
+              <div class="text-sm md:text-base font-semibold mb-3">
+                Rs. 399/-
+              </div>
+              <div class="flex items-center gap-2 md:gap-3">
+                <button
+                  class="px-4 md:px-5 py-1.5 md:py-2 rounded-full border border-white/30 hover:border-white text-xs md:text-sm transition"
+                >
+                  Explore
+                </button>
+                <button
+                  class="w-7 h-7 md:w-8 md:h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white transition text-xs"
+                >
+                  🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Top selling plants section -->
+    <section
+      id="top-selling"
+      class="relative z-20 page-deep py-16 md:py-24 px-6 md:px-10 lg:px-16"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-5 section-title"
+        >
+          Our Top Selling Plants
+        </h2>
+
+        <div
+          class="plant-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-8 gap-y-14 lg:gap-y-18 mt-18"
+        >
+          <!-- Aglaonema -->
+          <div
+            class="plant-card rounded-2xl p-5 pt-0 min-h-[305px] md:min-h-[330px] flex flex-col overflow-visible"
+          >
+            <div class="top-plant-frame flex items-end justify-center -mt-10">
+              <img
+                src="assets/aglaonema.png"
+                alt="Aglaonema"
+                class="top-plant-img h-[112%] object-contain drop-shadow-xl"
+              />
+            </div>
+            <h3 class="text-base font-semibold mt-1 mb-1">Aglaonema plant</h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-4">
+              The Aglaonema, or Chinese Evergreen, is known for its attractive
+              foliage and easy care.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-sm font-semibold">Rs. 300/-</span>
+              <button
+                class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#3d6b2c] flex items-center justify-center transition text-sm"
+              >
+                🛒
+              </button>
+            </div>
+          </div>
+
+          <!-- Plantain Lilies -->
+          <div
+            class="plant-card rounded-2xl p-5 pt-0 min-h-[305px] md:min-h-[330px] flex flex-col overflow-visible"
+          >
+            <div class="top-plant-frame flex items-end justify-center -mt-10">
+              <img
+                src="assets/plantain.png"
+                alt="Plantain"
+                class="top-plant-img h-[110%] object-contain drop-shadow-xl"
+              />
+            </div>
+            <h3 class="text-base font-semibold mt-1 mb-1">Plantain Lilies</h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-4">
+              Hostas are grown for their lush, decorative leaves that come in
+              many shapes and sizes.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-sm font-semibold">Rs. 380/-</span>
+              <button
+                class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#3d6b2c] flex items-center justify-center transition text-sm"
+              >
+                🛒
+              </button>
+            </div>
+          </div>
+
+          <!-- Cactus -->
+          <div
+            class="plant-card rounded-2xl p-5 pt-0 min-h-[305px] md:min-h-[330px] flex flex-col overflow-visible"
+          >
+            <div class="top-plant-frame flex items-end justify-center -mt-10">
+              <img
+                src="assets/cactus.png"
+                alt="Cactus"
+                class="top-plant-img h-[114%] object-contain drop-shadow-xl"
+              />
+            </div>
+            <h3 class="text-base font-semibold mt-1 mb-1">Cactus</h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-4">
+              Known for thriving in dry, arid environments with minimal water
+              needed.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-sm font-semibold">Rs. 259/-</span>
+              <button
+                class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#3d6b2c] flex items-center justify-center transition text-sm"
+              >
+                🛒
+              </button>
+            </div>
+          </div>
+
+          <!-- Swiss Cheese -->
+          <div
+            class="plant-card rounded-2xl p-5 pt-0 min-h-[305px] md:min-h-[330px] flex flex-col overflow-visible"
+          >
+            <div class="top-plant-frame flex items-end justify-center -mt-10">
+              <img
+                src="assets/swiss-cheese.png"
+                alt="Swiss Cheese"
+                class="top-plant-img h-[112%] object-contain drop-shadow-xl"
+              />
+            </div>
+            <h3 class="text-base font-semibold mt-1 mb-1">
+              Swiss cheese Plant
+            </h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-4">
+              A popular tropical houseplant with distinctive perforated leaves.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-sm font-semibold">Rs. 400/-</span>
+              <button
+                class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#3d6b2c] flex items-center justify-center transition text-sm"
+              >
+                🛒
+              </button>
+            </div>
+          </div>
+
+          <!-- Sansevieria -->
+          <div
+            class="plant-card rounded-2xl p-5 pt-0 min-h-[305px] md:min-h-[330px] flex flex-col overflow-visible"
+          >
+            <div class="top-plant-frame flex items-end justify-center -mt-10">
+              <img
+                src="assets/sansevieria.png"
+                alt="Sansevieria"
+                class="top-plant-img h-[114%] object-contain drop-shadow-xl"
+              />
+            </div>
+            <h3 class="text-base font-semibold mt-1 mb-1">Sansevieria plant</h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-4">
+              A striking indoor plant that's easy to care for and maintain.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-sm font-semibold">Rs. 450/-</span>
+              <button
+                class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#3d6b2c] flex items-center justify-center transition text-sm"
+              >
+                🛒
+              </button>
+            </div>
+          </div>
+
+          <!-- Agave -->
+          <div
+            class="plant-card rounded-2xl p-5 pt-0 min-h-[305px] md:min-h-[330px] flex flex-col overflow-visible"
+          >
+            <div class="top-plant-frame flex items-end justify-center -mt-10">
+              <img
+                src="assets/agave.png"
+                alt="Agave"
+                class="top-plant-img h-[114%] object-contain drop-shadow-xl"
+              />
+            </div>
+            <h3 class="text-base font-semibold mt-1 mb-1">Agave plant</h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-4">
+              A succulent with thick, fleshy leaves arranged in a striking
+              rosette pattern.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-sm font-semibold">Rs. 359/-</span>
+              <button
+                class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#3d6b2c] flex items-center justify-center transition text-sm"
+              >
+                🛒
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer reviews section -->
+    <section
+      id="reviews"
+      class="relative z-20 page-deep py-14 md:py-20 px-6 md:px-10 lg:px-16"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-10 lg:mb-14 section-title-bordered"
+        >
+          Customer Review
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="review-card rounded-2xl p-5 lg:p-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="review-avatar rounded-full flex-shrink-0"
+                role="img"
+                aria-label="Shelly Russel"
+              >
+                <img src="assets/avatar1.png" alt="" />
+              </div>
+              <div>
+                <div class="font-semibold text-sm md:text-base">
+                  Shelly Russel
+                </div>
+                <div class="stars mt-1" aria-label="5 out of 5 stars">
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-white/60 text-xs md:text-sm leading-relaxed">
+              Just got some awesome plants and couldn't be happier with my
+              purchase!
+            </p>
+          </div>
+
+          <div class="review-card rounded-2xl p-5 lg:p-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="review-avatar rounded-full flex-shrink-0"
+                role="img"
+                aria-label="Lula Rolfson"
+              >
+                <img src="assets/avatar2.png" alt="" />
+              </div>
+              <div>
+                <div class="font-semibold text-sm md:text-base">
+                  Lula Rolfson
+                </div>
+                <div class="stars mt-1" aria-label="4.5 out of 5 stars">
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star half">★</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-white/60 text-xs md:text-sm leading-relaxed">
+              Each plant has its own unique charm and they've already started
+              brightening up my space. The vibrant colors and fresh greenery
+              make such a difference.
+            </p>
+          </div>
+
+          <div class="review-card rounded-2xl p-5 lg:p-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="review-avatar rounded-full flex-shrink-0"
+                role="img"
+                aria-label="Carol Huels"
+              >
+                <img src="assets/avatar3.png" alt="" />
+              </div>
+              <div>
+                <div class="font-semibold text-sm md:text-base">
+                  Carol Huels
+                </div>
+                <div class="stars mt-1" aria-label="4 out of 5 stars">
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star full">★</span>
+                  <span class="star empty">★</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-white/60 text-xs md:text-sm leading-relaxed">
+              It's like bringing a piece of nature indoors. Totally worth it—my
+              plant collection has never looked better!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O2 plants section -->
+    <section
+      id="o2"
+      class="relative z-20 page-deep py-14 md:py-24 px-6 md:px-10 lg:px-16"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-10 lg:mb-14 section-title-bordered"
+        >
+          Our Best o2
+        </h2>
+
+        <div
+          class="glass-card rounded-3xl overflow-visible min-h-[330px] flex flex-col md:flex-row items-center md:items-stretch"
+        >
+          <!-- Plant image -->
+          <div
+            class="relative flex-shrink-0 flex items-end justify-center w-full md:w-[43%] -mt-20 md:-mt-32 px-4 md:px-0"
+          >
+            <img
+              src="assets/aglaonema.png"
+              alt="O2 Plant"
+              class="w-80 md:w-[28rem] lg:w-[34rem] max-w-none object-contain drop-shadow-2xl md:-translate-x-8"
+            />
+          </div>
+          <!-- Text content -->
+          <div class="flex-1 p-7 lg:p-12 flex flex-col justify-center">
+            <h3
+              class="font-display text-lg md:text-xl lg:text-2xl font-semibold mb-4"
+            >
+              We offer a curated collection of the best oxygen-producing plants
+              for your home.
+            </h3>
+            <p class="text-white/64 text-xs md:text-sm leading-[1.65] mb-3">
+              Oxygen-producing plants release oxygen into the air through
+              photosynthesis, helping improve air quality naturally.
+            </p>
+            <p class="text-white/64 text-xs md:text-sm leading-[1.65] mb-6">
+              Many plants also filter out pollutants like formaldehyde, benzene,
+              and trichloroethylene, making your air cleaner and healthier.
+            </p>
+            <div class="flex items-center gap-4">
+              <button
+                class="px-5 py-2 rounded-full border border-white/30 hover:border-white text-sm transition"
+              >
+                Explore
+              </button>
+              <div class="flex items-center gap-3 text-white/40 text-sm">
+                <span>‹</span>
+                <span>01/04</span>
+                <span>›</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dots -->
+        <div class="flex justify-center gap-2 mt-5">
+          <span class="w-2 h-2 rounded-full bg-white/70"></span>
+          <span class="w-2 h-2 rounded-full bg-white/25"></span>
+          <span class="w-2 h-2 rounded-full bg-white/25"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      id="footer"
+      class="relative z-20 page-deep py-14 px-6 md:px-10 lg:px-16 border-t border-white/10"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-9 mb-9">
+          <!-- Brand -->
+          <div>
+            <div class="flex items-center gap-2 text-lg font-semibold mb-3">
+              <span class="brand-logo brand-logo-footer" aria-hidden="true">
+                <img src="assets/plant_1.png" alt="" />
+              </span>
+              FloraVision.
+            </div>
+            <p class="text-white/50 text-sm leading-relaxed max-w-xs">
+              "From lush indoor greens to vibrant outdoor blooms, our plants
+              thrive and elevate any living space."
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="font-semibold mb-4 text-sm tracking-wide">
+              Quick Links
+            </h4>
+            <ul class="space-y-2.5 text-sm text-white/50">
+              <li>
+                <a href="#hero" class="hover:text-white transition">Home</a>
+              </li>
+              <li>
+                <a href="#trendy" class="hover:text-white transition"
+                  >Types of Plants</a
+                >
+              </li>
+              <li>
+                <a href="#footer" class="hover:text-white transition"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h4 class="font-semibold mb-4 text-sm tracking-wide">
+              For Updates
+            </h4>
+            <div class="subscribe-shell flex rounded-full overflow-hidden">
+              <input
+                type="email"
+                placeholder="Enter Email"
+                class="flex-1 bg-transparent px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none"
+              />
+              <button
+                class="btn-primary px-5 py-2.5 text-xs font-semibold tracking-widest transition whitespace-nowrap rounded-full"
+              >
+                SUBSCRIBE
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-between pt-8 border-t border-white/10"
+        >
+          <div class="flex gap-5 text-white/40 text-sm">
+            <a href="#" class="hover:text-white transition">FB</a>
+            <a href="#" class="hover:text-white transition">TW</a>
+            <a href="#" class="hover:text-white transition">LI</a>
+          </div>
+          <p class="text-white/30 text-xs">FloraVision © All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
